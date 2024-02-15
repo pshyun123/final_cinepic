@@ -4,6 +4,7 @@ import Button from "../../util/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import ProfileImg from "../../util/ProfileImg";
+import Common from "../../util/Common";
 
 const MyInfoComp = styled.section`
   width: 100%;

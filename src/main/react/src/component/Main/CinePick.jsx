@@ -132,13 +132,29 @@ const CinePick = () => {
                   }}
                 >
                   <img src={label} alt="label" className="label" />
-                  <ImgComp
+                  {/* <ImgComp
                     style={{
                       backgroundImage: `url(${
                         movieData &&
                         movieData.length > 0 &&
                         movieData[0].recs1.moviePoster
                       })`,
+                    }}
+                  /> */}
+                  <ImgComp
+                    style={{
+                      backgroundImage:
+                        movieData &&
+                        movieData.length > 0 &&
+                        movieData[0].recs1.moviePoster
+                          ? `url(${movieData[0].recs1.moviePoster})`
+                          : "none",
+                      backgroundColor:
+                        movieData &&
+                        movieData.length > 0 &&
+                        movieData[0].recs1.moviePoster
+                          ? "transparent"
+                          : "var(--GREY)",
                     }}
                   />
                 </div>
@@ -185,11 +201,25 @@ const CinePick = () => {
                         <img src={label} alt="label" className="label" />
 
                         {/* 포스터 recs2번부터 가져오기 위해 index +1 해줌 */}
-                        <ImgComp
+                        {/* <ImgComp
                           style={{
                             backgroundImage: `url(${
                               recsList[index + 1].moviePoster
                             })`,
+                          }}
+                        /> */}
+                        <ImgComp
+                          style={{
+                            backgroundImage:
+                              recsList[index + 1] &&
+                              recsList[index + 1].moviePoster
+                                ? `url(${recsList[index + 1].moviePoster})`
+                                : "none",
+                            backgroundColor:
+                              recsList[index + 1] &&
+                              recsList[index + 1].moviePoster
+                                ? "transparent"
+                                : "var(--GREY)",
                           }}
                         />
                       </div>

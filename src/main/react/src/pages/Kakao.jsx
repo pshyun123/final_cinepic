@@ -42,7 +42,11 @@ const Kakao = () => {
         setIsMember(!res.data.isMember);
         if (!res.data.isMember) {
           setEmail(res.data.userInfo.kakao_account.email);
-          setProfile(res.data.userInfo.kakao_account.profile.profile_image_url);
+          setProfile(
+            Common.convertToHttps(
+              res.data.userInfo.kakao_account.profile.profile_image_url
+            )
+          );
           setKakaoId(res.data.userInfo.id);
         }
       } else if (res.data === "") {

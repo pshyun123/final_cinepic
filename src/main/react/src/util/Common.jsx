@@ -36,12 +36,16 @@ const Common = {
     };
   },
 
+  convertToHttps: (url) => {
+    return url.replace(/^http:/, "https:");
+  },
+
   // 토큰 재발행(만료시)
   handleUnathorized: async () => {
     const accessToken = Common.getAccessToken();
     const refreshToken = Common.getRefreshToken();
-    console.log("refreshToken : " + refreshToken);
-    console.log("재발행 전 : " + accessToken);
+    // console.log("refreshToken : " + refreshToken);
+    // console.log("재발행 전 : " + accessToken);
     const config = {
       headers: {
         Authorization: `Bearer ${accessToken}`,
@@ -53,7 +57,7 @@ const Common = {
         refreshToken,
         config
       );
-      console.log(res.data);
+      // console.log(res.data);
       Common.setAccessToken(res.data.accessToken);
       return true;
     } catch (err) {

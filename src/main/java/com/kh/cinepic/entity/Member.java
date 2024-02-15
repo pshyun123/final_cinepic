@@ -81,4 +81,5 @@ public class Member {
         this.isKakao = isKakao;
         this.authority = authority;
     }
+
 }
