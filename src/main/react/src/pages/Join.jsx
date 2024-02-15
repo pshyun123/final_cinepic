@@ -12,6 +12,7 @@ import MemberApi from "../api/MemberApi";
 import Common from "../util/Common";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+import ProfileImg from "../util/ProfileImg";
 
 const Join = ({ email, profile, kakaoId }) => {
   const navigate = useNavigate();
@@ -382,7 +383,7 @@ const Join = ({ email, profile, kakaoId }) => {
           <div className="profile">
             <div className="imgBox">
               {imgSrc ? (
-                <img src={imgSrc} alt="프로필이미지" />
+                <ProfileImg $imgUrl={imgSrc} />
               ) : (
                 <FontAwesomeIcon icon={faUser} />
               )}

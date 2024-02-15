@@ -285,7 +285,7 @@ const Preference = () => {
     <>
       <PreferComp>
         <div className="container">
-          <h2>내 영화 취향 선택하기</h2>
+          <h2>내 영화 취향 {type === "new" ? "등록" : "수정"}하기</h2>
           <div className="searchSel selDirector">
             <h3>| 선호하는 감독(최대 3명)</h3>
             <div className="searchBar">
@@ -318,7 +318,8 @@ const Preference = () => {
                             <button
                               onClick={() => {
                                 deleteDirector(index);
-                              }}>
+                              }}
+                            >
                               <FontAwesomeIcon icon={faTimes} />
                             </button>
                           </span>
@@ -359,7 +360,8 @@ const Preference = () => {
                               <button
                                 onClick={() => {
                                   deleteActor(index);
-                                }}>
+                                }}
+                              >
                                 <FontAwesomeIcon icon={faTimes} />
                               </button>
                             </span>

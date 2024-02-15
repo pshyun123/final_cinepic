@@ -20,7 +20,7 @@ import ChatList from "./pages/ChatList";
 import Chat from "./pages/Chat";
 import Payment from "./pages/Payment";
 import Preference from "./pages/Preference";
-import UtilTest from "./pages/UtilTest";
+import Privacy from "./pages/Privacy";
 import Theater from "./pages/Theater";
 import AdminLogin from "./pages/Admin/AdminLogin";
 import AdminLayout from "./pages/Admin/AdminLayout";
@@ -58,7 +58,7 @@ function App() {
               <Route path="/chatlist/:roomId" element={<Chat />} />
               <Route path="/payment" element={<Payment />} />
               <Route path="/theater" element={<Theater />} />
-              <Route path="/utiltest" element={<UtilTest />} />
+              <Route path="/privacyterm" element={<Privacy />} />
             </Route>
             <Route path="/loginadmin" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminLayout />}>

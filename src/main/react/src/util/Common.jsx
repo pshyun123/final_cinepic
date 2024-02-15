@@ -2,7 +2,7 @@ import axios from "axios";
 
 const Common = {
   CP_DOMAIN: "",
-  CP_SOCKET_URL: "ws://localhost:8111/ws/chat",
+  CP_SOCKET_URL: "wss://cinepic2024.site/ws/chat",
 
   // 발행된 토큰을 로컬에 저장
   setAccessToken: (token) => {

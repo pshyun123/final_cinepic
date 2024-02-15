@@ -1,5 +1,6 @@
 package com.kh.cinepic.controller;
 
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class SPAController {
+public class SPAController implements ErrorController {
 
     private final AntPathMatcher antPathMatcher = new AntPathMatcher();
 
@@ -31,4 +32,10 @@ public class SPAController {
 
         return "forward:/index.html";
     }
+
+    @RequestMapping("/error")
+    public String handleError() {
+        return "forward:/index.html";
+    }
+
 }
