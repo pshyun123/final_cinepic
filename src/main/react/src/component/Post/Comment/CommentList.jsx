@@ -21,13 +21,13 @@ const BoardCommentList = ({ id, userAlias }) => {
   const submitComment = async () => {
     try {
       const response = await BoardCommentApi.saveNewComment(id, inputComment);
-      console.log("댓글 저장 결과 : ", response.data);
+      // console.log("댓글 저장 결과 : ", response.data);
       if (response.data) {
-        console.log("댓글이 성공적으로 저장되었습니다.");
+        // console.log("댓글이 성공적으로 저장되었습니다.");
         setInputComment("");
         getTotalPage();
       } else {
-        console.log("댓글 저장에 실패했습니다.");
+        // console.log("댓글 저장에 실패했습니다.");
       }
     } catch (error) {
       console.error("댓글 저장 중 오류 발생:", error);
@@ -40,7 +40,7 @@ const BoardCommentList = ({ id, userAlias }) => {
     try {
       const res = await BoardCommentApi.boardCommentPageList(id, page);
       if (res.data !== null) {
-        console.log("댓글 페이지네이션 : ", res.data);
+        // console.log("댓글 페이지네이션 : ", res.data);
         setCommentData(res.data);
       }
     } catch (error) {
@@ -55,7 +55,7 @@ const BoardCommentList = ({ id, userAlias }) => {
     setPage(1);
     const rsp = await BoardCommentApi.totalBoardCommentPage(id);
     if (rsp.data !== null) {
-      console.log("댓글 총 페이지 수 : ", rsp.data);
+      // console.log("댓글 총 페이지 수 : ", rsp.data);
       setTotalPage(rsp.data);
       getFirstPage();
     }

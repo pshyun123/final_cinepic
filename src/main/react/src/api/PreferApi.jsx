@@ -54,7 +54,7 @@ const PreferApi = {
 
   // 비회원 영화 추천
   getRecsMovies: async (genre) => {
-    console.log(genre);
+    // console.log(genre);
     return await axios.get(Common.CP_DOMAIN + `/auth/recs/${genre}`);
   },
 };

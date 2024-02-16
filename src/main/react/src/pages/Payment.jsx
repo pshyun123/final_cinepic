@@ -136,14 +136,14 @@ const Payment = () => {
   // 멤버십 정보 저장
   const membershipUpdate = async () => {
     const res = await MemberApi.saveMembership(true);
-    console.log(res.data);
+    // console.log(res.data);
     if (res.data) {
-      console.log("멤버십 저장 성공");
+      // console.log("멤버십 저장 성공");
       setIsMembership(true);
       // 모달을 여기서 불러줌
       modal();
     } else {
-      console.log("멤버십 저장 실패!");
+      // console.log("멤버십 저장 실패!");
       navigate("/payment");
     }
   };
@@ -184,7 +184,7 @@ const Payment = () => {
 
     if (success) {
       updateMembership();
-      console.log("결제 성공");
+      // console.log("결제 성공");
     } else {
       alert(`결제 실패: ${error_msg}`);
     }

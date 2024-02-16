@@ -114,7 +114,7 @@ const EditFaqModal = (props) => {
   const newFaq = async () => {
     const res = await FaqApi.createFaq(contentVal, titleVal);
     if (res.data) {
-      console.log("faq 저장 성공");
+      // console.log("faq 저장 성공");
       close();
       bringData();
     }
@@ -122,10 +122,10 @@ const EditFaqModal = (props) => {
   const addFaq = useTokenAxios(newFaq);
 
   const reviseFaq = async () => {
-    console.log("수정 시도");
+    // console.log("수정 시도");
     const res = await FaqApi.reviseFaq(editId, contentVal, titleVal);
     if (res.data) {
-      console.log("faq 수정 성공");
+      // console.log("faq 수정 성공");
       close();
       bringData();
     }

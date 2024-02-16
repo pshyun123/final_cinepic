@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const Nav = ({ active, togle }) => {
   const navigate = useNavigate();
 
-  console.log("active :" + active);
+  // console.log("active :" + active);
 
   const onClickMenu = (num) => {
     switch (num) {

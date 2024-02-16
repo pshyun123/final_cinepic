@@ -28,7 +28,7 @@ const FaqTr = ({
   onDelete,
   deleteModal,
 }) => {
-  console.log(data);
+  // console.log(data);
 
   return (
     <>

@@ -81,12 +81,12 @@ const SearchComp = styled.section`
 const MovieBanner = ({ setKeyword, setSortBy, searchCompRef }) => {
   const [searchInput, setSearchInput] = useState("");
 
-  useEffect(() => {
-    console.log("검색어 변화 : " + searchInput);
-  }, [searchInput]);
-  useEffect(() => {
-    console.log("렌더링!");
-  }, []);
+  // useEffect(() => {
+  //   console.log("검색어 변화 : " + searchInput);
+  // }, [searchInput]);
+  // useEffect(() => {
+  //   console.log("렌더링!");
+  // }, []);
 
   return (
     <>

@@ -224,9 +224,9 @@ const TabPostModal = (props) => {
     modiPost,
   } = props;
 
-  useEffect(() => {
-    console.log("수정할 포스트 아이디 : " + moviePostId);
-  }, [moviePostId]);
+  // useEffect(() => {
+  //   console.log("수정할 포스트 아이디 : " + moviePostId);
+  // }, [moviePostId]);
   // 수정 선택 여부
   const [isRevise, setIsRevise] = useState(false);
 
@@ -258,13 +258,13 @@ const TabPostModal = (props) => {
       const fileRef = storageRef.child(file.name);
       fileRef.put(file).then(() => {
         fileRef.getDownloadURL().then((url) => {
-          console.log("저장경로 확인 : " + url);
-          console.log("url" + url);
+          // console.log("저장경로 확인 : " + url);
+          // console.log("url" + url);
           type === "view" ? modiPost(url) : savePost(url);
         });
       });
     } else {
-      console.log("파이어베이스 생략");
+      // console.log("파이어베이스 생략");
       type === "view" ? modiPost(imgSrc) : savePost(imgSrc);
     }
   };
@@ -275,13 +275,13 @@ const TabPostModal = (props) => {
   //   console.log("imgSrc : " + imgSrc);
   // }, [imgSrc]);
 
-  useEffect(() => {
-    console.log("modal rendered!");
-  }, []);
+  // useEffect(() => {
+  //   console.log("modal rendered!");
+  // }, []);
 
-  useEffect(() => {
-    console.log("type : " + type);
-  }, [type]);
+  // useEffect(() => {
+  //   console.log("type : " + type);
+  // }, [type]);
 
   return (
     <>

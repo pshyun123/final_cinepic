@@ -42,10 +42,10 @@ const Preference = () => {
 
   // 감독 추가
   const addDirector = () => {
-    console.log("addDirector 함수가 호출되었습니다.");
+    // console.log("addDirector 함수가 호출되었습니다.");
     // inputDirector이 비어있는지 확인
     if (inputDirector.trim() === "") {
-      console.log("감독 이름이 비어있습니다.");
+      // console.log("감독 이름이 비어있습니다.");
       handleModal(
         "입력값 없음",
         "입력값이 없습니다. \n 이름을 입력해 주세요.",
@@ -58,11 +58,11 @@ const Preference = () => {
       if (!directorList.includes(inputDirector)) {
         setDirectorList(directorList.concat(inputDirector));
         setInputDirector("");
-        console.log(directorList);
+        // console.log(directorList);
         setIsDirector(true);
       } else {
         // 중복된 경우에 대한 처리
-        console.log("이미 추가된 감독입니다.");
+        // console.log("이미 추가된 감독입니다.");
         // 검색 결과가 중복일 경우 모달 열기
         handleModal(
           "이름 중복",
@@ -91,10 +91,10 @@ const Preference = () => {
 
   // 배우 추가
   const addActor = () => {
-    console.log("addActor 함수가 호출되었습니다.");
+    // console.log("addActor 함수가 호출되었습니다.");
     // inputActor이 비어있는지 확인
     if (inputActor.trim() === "") {
-      console.log("배우 이름이 비어있습니다.");
+      // console.log("배우 이름이 비어있습니다.");
       handleModal(
         "입력값 없음",
         "입력값이 없습니다. \n 이름을 입력해 주세요.",
@@ -108,11 +108,11 @@ const Preference = () => {
       if (!actorList.includes(inputActor)) {
         setActorList(actorList.concat(inputActor));
         setInputActor("");
-        console.log(actorList);
+        // console.log(actorList);
         setIsActor(true);
       } else {
         // 중복된 경우에 대한 처리
-        console.log("이미 추가된 배우입니다.");
+        // console.log("이미 추가된 배우입니다.");
         // 검색 결과가 중복일 경우 모달 열기
         handleModal(
           "이름 중복",
@@ -138,7 +138,7 @@ const Preference = () => {
   // 성별 고르기
   const handleGenderCheck = (gender) => {
     setSelectedGender(gender);
-    console.log(gender);
+    // console.log(gender);
     setIsGender(true);
   };
 
@@ -161,7 +161,7 @@ const Preference = () => {
       // 선택되지 않은 경우 추가(단 , 최대 개수를 초과하지 않아야 함)
       if (selectedGenres.length < maxGenres) {
         setSelectedGenres([...selectedGenres, genre]);
-        console.log(genre);
+        // console.log(genre);
         setIsGenres(true);
       }
     }
@@ -169,10 +169,10 @@ const Preference = () => {
 
   // 등록 할 때 수정 시
   useEffect(() => {
-    console.log("감독 : " + directorList);
-    console.log("배우 : " + actorList);
-    console.log("성별 : " + selectedGender);
-    console.log("장르 : " + selectedGenres);
+    // console.log("감독 : " + directorList);
+    // console.log("배우 : " + actorList);
+    // console.log("성별 : " + selectedGender);
+    // console.log("장르 : " + selectedGenres);
     if (directorList.length === 0) {
       setIsDirector(false);
     }
@@ -210,7 +210,7 @@ const Preference = () => {
       selectedGenres.join(",")
     );
     if (res.data === true) {
-      console.log("저장 성공");
+      // console.log("저장 성공");
       setIsPrefer(res.data);
       preferMovieSave();
     } else {
@@ -226,9 +226,9 @@ const Preference = () => {
   // 회원 취향 정보 불러오기
   const fetchPreferData = async () => {
     try {
-      console.log("api 요청 전");
+      // console.log("api 요청 전");
       const res = await PreferApi.getPreferInfo();
-      console.log("api 요청 후 : ", res);
+      // console.log("api 요청 후 : ", res);
       if (res.data !== null && res.data !== undefined) {
         setDirectorList(res.data.directorName.split(","));
 
@@ -263,7 +263,7 @@ const Preference = () => {
       selectedGenres.join(",")
     );
     if (res.data) {
-      console.log("수정 성공");
+      // console.log("수정 성공");
       preferMovieSave();
     }
   };
@@ -271,7 +271,7 @@ const Preference = () => {
   const preferMovieSave = async () => {
     const res = await PreferApi.saveRecsMovie();
     if (res.data) {
-      console.log("영화추천 저장 성공");
+      // console.log("영화추천 저장 성공");
       type === "new"
         ? handleModal("성공", "등록이 완료되었습니다.", false, 0)
         : handleModal("성공", "수정이 완료되었습니다.", false, 1);

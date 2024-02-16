@@ -34,14 +34,14 @@ const Comment = ({ boardComment, fetchCommentList, userAlias }) => {
   // 수정 Api
   const commentModify = async () => {
     try {
-      console.log("댓글 수정 전");
+      // console.log("댓글 수정 전");
       const res = await BoardCommentApi.commentModify(
         boardComment.commentId,
         editModalContent
       );
       console.log("commentId : " + boardComment.commentId);
       if (res.data !== null) {
-        console.log("댓글 수정 성공");
+        // console.log("댓글 수정 성공");
         closeEditModal(); // 수정 모달 닫기
         fetchCommentList(); // 수정 후 댓글 목록 다시 불러오기
       }
@@ -63,7 +63,7 @@ const Comment = ({ boardComment, fetchCommentList, userAlias }) => {
       boardComment.commentId
     );
     if (deleteRes.data) {
-      console.log("Comment 삭제 성공");
+      // console.log("Comment 삭제 성공");
       closeModal(); // 모달 닫기
       fetchCommentList(); // 삭제 후 댓글 목록 다시 불러오기
     }

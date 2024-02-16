@@ -4,7 +4,7 @@ import Common from "../util/Common";
 const TheaterApi = {
   // 지도 "주소" 키워드 검색
   theaterAddrSearch: async (keyword) => {
-    console.log("극장정보 api 진입 : ", +keyword);
+    // console.log("극장정보 api 진입 : ", +keyword);
     return await axios.get(
       Common.CP_DOMAIN + `/theater/searchTheaterAddr?keyword=${keyword}`
     );

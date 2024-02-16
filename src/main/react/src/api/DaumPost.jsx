@@ -54,9 +54,9 @@ const DaumPostPopup = (props) => {
       }
       fullAddress += extraAddress !== "" ? `(${extraAddress})` : "";
     }
-    console.log(data);
-    console.log(fullAddress);
-    console.log(data.zoneCode);
+    // console.log(data);
+    // console.log(fullAddress);
+    // console.log(data.zoneCode);
     setAddr(fullAddress);
     onClose();
   };

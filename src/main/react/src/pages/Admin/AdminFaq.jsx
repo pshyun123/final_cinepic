@@ -105,7 +105,7 @@ const AdminFaq = () => {
     const res = await FaqApi.getFaqList();
     if (res.data !== null) {
       setFaqData(res.data);
-      console.log("Faq리스트 가져옴");
+      // console.log("Faq리스트 가져옴");
     }
   };
 

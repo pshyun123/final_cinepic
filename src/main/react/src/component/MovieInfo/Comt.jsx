@@ -221,16 +221,16 @@ const Comt = (props) => {
 
   // 수정
   const commentModify = async () => {
-    console.log("관람평 수정 전");
+    // console.log("관람평 수정 전");
     const res = await MovieDetailApi.modifyMovieComment(
       comt.commentId,
       editField,
       editNum,
       editText
     );
-    console.log("commentId : " + comt.commentId);
+    // console.log("commentId : " + comt.commentId);
     if (res.data !== null) {
-      console.log("관람평 수정 성공");
+      // console.log("관람평 수정 성공");
       fetchPage();
     }
   };

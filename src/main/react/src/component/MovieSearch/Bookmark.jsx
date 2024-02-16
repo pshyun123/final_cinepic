@@ -72,7 +72,7 @@ const Bookmark = ({ movieId, handleModal, sortType, hideMovie }) => {
   const saveBookMark = async () => {
     const res = await BookmarkApi.saveBookmark(movieId);
     if (res.data) {
-      console.log("북마크 성공!");
+      // console.log("북마크 성공!");
       setBookMark();
       preferMovieSave();
     }
@@ -83,7 +83,7 @@ const Bookmark = ({ movieId, handleModal, sortType, hideMovie }) => {
   const deleteBookMark = async () => {
     const res = await BookmarkApi.removeBookmark(movieId);
     if (res.data) {
-      console.log("북마크 해제 성공!");
+      // console.log("북마크 해제 성공!");
       setBookMark();
       preferMovieSave();
       if (sortType === "member") {
@@ -96,7 +96,7 @@ const Bookmark = ({ movieId, handleModal, sortType, hideMovie }) => {
   const preferMovieSave = async () => {
     const res = await PreferApi.saveRecsMovie();
     if (res.data) {
-      console.log("영화추천 저장 성공");
+      // console.log("영화추천 저장 성공");
     }
   };
 
@@ -112,9 +112,9 @@ const Bookmark = ({ movieId, handleModal, sortType, hideMovie }) => {
     }
   };
 
-  useEffect(() => {
-    console.log("marked : " + marked);
-  }, [marked]);
+  // useEffect(() => {
+  //   console.log("marked : " + marked);
+  // }, [marked]);
 
   useEffect(() => {
     if (loginStatus) {

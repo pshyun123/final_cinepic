@@ -150,7 +150,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
   const [loading, setLoading] = useState(false);
 
   const fetchTotalPage = async () => {
-    console.log("포스트 총 페이지 불러오는 중");
+    // console.log("포스트 총 페이지 불러오는 중");
     setCurrentPage(1);
     try {
       const res = await MovieDetailApi.getTotalMoviePostPages(movieId);
@@ -163,7 +163,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
     }
   };
   const fetchFirstPosts = async () => {
-    console.log("포스트 첫 리스트 불러오는 중");
+    // console.log("포스트 첫 리스트 불러오는 중");
     setLoading();
     try {
       const res = await MovieDetailApi.getPagedMoviePostList(movieId, 1);
@@ -178,7 +178,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
   };
 
   const fetchPosts = async () => {
-    console.log("포스트 불러오는 중");
+    // console.log("포스트 불러오는 중");
     setLoading();
     try {
       const res = await MovieDetailApi.getPagedMoviePostList(
@@ -201,7 +201,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
       currentPage <= totalPage &&
       !loading
     ) {
-      console.log("추가 로딩 지점 도달");
+      // console.log("추가 로딩 지점 도달");
       fetchPosts();
     }
   };
@@ -252,7 +252,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
       postTitle,
       postContent
     );
-    console.log("포스트 업로딩 결과 : ", res.data);
+    // console.log("포스트 업로딩 결과 : ", res.data);
 
     if (res.data) {
       setPostImage("");
@@ -277,7 +277,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
 
   // 수정
   const modiPost = async (url) => {
-    console.log("무비포스트 수정 전");
+    // console.log("무비포스트 수정 전");
     const res = await MovieDetailApi.modifyMoviePost(
       editId,
       url,
@@ -286,7 +286,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
     );
     console.log("postId : " + editId);
     if (res.data !== null) {
-      console.log("무비포스트 수정 성공");
+      // console.log("무비포스트 수정 성공");
       // 조회 함수 자리
       fetchTotalPage();
       closeModal();
@@ -298,7 +298,7 @@ const TabPostSlide = ({ movieId, userImage, userAlias }) => {
   const deletePost = async () => {
     const res = await MovieDetailApi.deleteMoviePost(editId);
     if (res.data) {
-      console.log("무비포스트 삭제 성공");
+      // console.log("무비포스트 삭제 성공");
       closePostModal();
       // 조회 함수 추가
       fetchTotalPage();

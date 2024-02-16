@@ -15,7 +15,7 @@ const MovieDetailApi = {
 
   // 총 페이지 수(조회)
   getTotalMoviePostPages: async (movieId) => {
-    console.log("씨네포스트 총 페이지 수 :" + movieId);
+    // console.log("씨네포스트 총 페이지 수 :" + movieId);
     const page = 0;
     const size = 8;
     return await axios.get(
@@ -34,7 +34,7 @@ const MovieDetailApi = {
   },
   // 저장
   saveMoviePost: async (movieId, postImage, postTitle, postContent) => {
-    console.log("씨네포스트 저장 진입 ");
+    // console.log("씨네포스트 저장 진입 ");
     const data = {
       movieId: movieId,
       postImage: postImage,
@@ -50,7 +50,7 @@ const MovieDetailApi = {
 
   // 수정
   modifyMoviePost: async (postId, postImage, postTitle, postContent) => {
-    console.log("씨네포스트 수정 진입");
+    // console.log("씨네포스트 수정 진입");
     const data = {
       postId: postId,
       postImage: postImage,
@@ -65,7 +65,7 @@ const MovieDetailApi = {
   },
   // 삭제
   deleteMoviePost: async (id) => {
-    console.log("댓글 삭제 : " + id);
+    // console.log("댓글 삭제 : " + id);
     return await axios.delete(
       Common.CP_DOMAIN + `/movieDetail/post/delete/${id}`,
       Common.tokenHeader()
@@ -74,7 +74,7 @@ const MovieDetailApi = {
   // 관람평 ---------------------------------------------------------------
   // 총 페이지 수(조회)
   getTotalMovieCommentPages: async (movieId) => {
-    console.log("관람평 총 페이지 수 : " + movieId);
+    // console.log("관람평 총 페이지 수 : " + movieId);
     const page = 0;
     const size = 5;
     return await axios.get(
@@ -93,8 +93,8 @@ const MovieDetailApi = {
   },
   // 저장
   saveMovieComment: async (movieId, field, num, text) => {
-    console.log("Api - 관람평 저장 진입");
-    console.log("영화아이디 : " + movieId);
+    // console.log("Api - 관람평 저장 진입");
+    // console.log("영화아이디 : " + movieId);
     const ratingNum = Number(num);
     const data = {
       movieId: movieId,
@@ -111,7 +111,7 @@ const MovieDetailApi = {
 
   // 수정
   modifyMovieComment: async (commentId, field, num, text) => {
-    console.log("관람평 수정 진입");
+    // console.log("관람평 수정 진입");
     const data = {
       commentId: commentId,
       ratingField: field,
@@ -126,7 +126,7 @@ const MovieDetailApi = {
   },
   // 삭제
   deleteMovieComment: async (id) => {
-    console.log("관람평 삭제 진입");
+    // console.log("관람평 삭제 진입");
     return await axios.delete(
       Common.CP_DOMAIN + `/movieDetail/comment/delete/${id}`,
       Common.tokenHeader()

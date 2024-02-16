@@ -117,7 +117,7 @@ const Join = ({ email, profile, kakaoId }) => {
   // 이메일
   const onChangeEmail = (e) => {
     const currEmail = e.target.value;
-    console.log("currr" + currEmail);
+    // console.log("currr" + currEmail);
     setInputEmail(currEmail);
     if (!regexList[0].test(currEmail)) {
       setEmailMessage("잘못 된 형식입니다.");
@@ -131,9 +131,9 @@ const Join = ({ email, profile, kakaoId }) => {
   const [sentCode, setSentCode] = useState("");
   const onChangeEmailCode = (e) => {
     const currCode = Number(e.target.value);
-    console.log("currr" + typeof currCode);
-    console.log("sentCode: " + typeof sentCode);
-    console.log("code : " + (currCode === sentCode));
+    // console.log("currr" + typeof currCode);
+    // console.log("sentCode: " + typeof sentCode);
+    // console.log("code : " + (currCode === sentCode));
     setInputCode(currCode);
   };
 
@@ -141,7 +141,7 @@ const Join = ({ email, profile, kakaoId }) => {
   const authorizeMail = async () => {
     try {
       const res = await MemberApi.sendEmailCode(inputEmail);
-      console.log("이메일전송 결과 : " + res.data);
+      // console.log("이메일전송 결과 : " + res.data);
       if (res.data !== null) {
         setSentCode(res.data);
         setModalOpen(true);
@@ -316,7 +316,7 @@ const Join = ({ email, profile, kakaoId }) => {
         isKakao
       );
       if (res.data !== null) {
-        console.log("회원가입 성공!");
+        // console.log("회원가입 성공!");
         setModalOpen(true);
         setModalHeader("회원가입");
         setModalMsg("회원가입에 성공했습니다!");
@@ -341,10 +341,10 @@ const Join = ({ email, profile, kakaoId }) => {
   }, []);
   // 카카오 로그인 처리
   const kakaoLogin = async () => {
-    console.log("카카오 로그인!");
+    // console.log("카카오 로그인!");
     try {
       const res = await MemberApi.login(email, kakaoId);
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.grantType === "Bearer") {
         // console.log("KL accessToken : " + res.data.accessToken);
         // console.log("KL refreshToken : " + res.data.refreshToken);
@@ -359,10 +359,10 @@ const Join = ({ email, profile, kakaoId }) => {
   };
   // 일반 로그인 처리
   const login = async () => {
-    console.log("로그인");
+    // console.log("로그인");
     try {
       const res = await MemberApi.login(inputEmail, inputPw2);
-      console.log(res.data);
+      // console.log(res.data);
       if (res.data.grantType === "Bearer") {
         Common.setAccessToken(res.data.accessToken);
         Common.setRefreshToken(res.data.refreshToken);

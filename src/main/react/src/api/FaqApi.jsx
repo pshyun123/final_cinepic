@@ -18,7 +18,7 @@ const FaqApi = {
   // faq 수정
 
   reviseFaq: async (faqId, faqAnswer, faqQuestion) => {
-    console.log("FAQ 수정 : " + faqId);
+    // console.log("FAQ 수정 : " + faqId);
     const data = {
       faqId: faqId,
       faqAnswer: faqAnswer,
@@ -34,7 +34,7 @@ const FaqApi = {
   // faq 삭제
 
   deleteFaq: async (faqId) => {
-    console.log("FAQ 삭제 :" + faqId);
+    // console.log("FAQ 삭제 :" + faqId);
     return await axios.delete(
       Common.CP_DOMAIN + `/faq/delete/${faqId}`,
       Common.tokenHeader()
@@ -43,7 +43,7 @@ const FaqApi = {
 
   // 관리자 faq 테스트
   getFaqList: async () => {
-    console.log("faq 리스트 가지러감");
+    // console.log("faq 리스트 가지러감");
     return await axios.get(
       Common.CP_DOMAIN + "/faq/list",
       Common.tokenHeader()
@@ -52,7 +52,7 @@ const FaqApi = {
 
   // 메인 페이지 faq 리스트
   getMainFaq: async () => {
-    console.log("FAQ 메인페이지 출력");
+    // console.log("FAQ 메인페이지 출력");
     return await axios.get(Common.CP_DOMAIN + "/auth/faqlist");
   },
 };

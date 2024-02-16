@@ -15,7 +15,7 @@ const Kakao = () => {
 
   // 카카오 엑세스 토큰 요청을 위한 코드
   const code = new URL(window.location.href).searchParams.get("code");
-  console.log(code);
+  // console.log(code);
 
   const [email, setEmail] = useState("");
   const [profile, setProfile] = useState("");
@@ -26,7 +26,7 @@ const Kakao = () => {
     try {
       const res = await KakaoApi.getToken(code);
       if (res.data) {
-        console.log(res.data.access_token);
+        // console.log(res.data.access_token);
         kakaoUser(res.data.access_token);
       }
     } catch (err) {
@@ -37,7 +37,7 @@ const Kakao = () => {
   const kakaoUser = async (token) => {
     try {
       const res = await KakaoApi.getInfo(token);
-      console.log("kakaoUser", typeof res.data);
+      // console.log("kakaoUser", typeof res.data);
       if (res.data !== "") {
         setIsMember(!res.data.isMember);
         if (!res.data.isMember) {
@@ -66,7 +66,7 @@ const Kakao = () => {
   };
 
   const login = async (email, password) => {
-    console.log("카카오 로그인!");
+    // console.log("카카오 로그인!");
     try {
       const res = await MemberApi.login(email, password);
       // console.log(res.data);

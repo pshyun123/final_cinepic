@@ -133,10 +133,10 @@ const NewPost = () => {
       const storageRef = storage.ref();
       const fileRef = storageRef.child(file.name);
       fileRef.put(file).then(() => {
-        console.log("저장성공!");
+        // console.log("저장성공!");
         fileRef.getDownloadURL().then((url) => {
-          console.log("저장경로 확인 : " + url);
-          console.log("url" + url);
+          // console.log("저장경로 확인 : " + url);
+          // console.log("url" + url);
           newPost(url);
         });
       });
@@ -155,7 +155,7 @@ const NewPost = () => {
       inputContents
     );
     if (res.data) {
-      console.log("저장 성공!");
+      // console.log("저장 성공!");
       handleModal(
         "새 글 등록 성공",
         selCategory + "(" + selGather + ")에 게시글 등록이 완료 되었습니다.",

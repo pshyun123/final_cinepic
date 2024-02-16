@@ -65,7 +65,7 @@ const Theater = () => {
       try {
         const resp = await TheaterApi.theaterIdDetail();
         setTheaterData([resp.data]);
-        console.log("초기 데이터 : " + resp.data.longitude);
+        // console.log("초기 데이터 : " + resp.data.longitude);
         setSelectedPlace(resp.data);
         setLocation({ lat: resp.data.latitude, long: resp.data.longitude });
       } catch (error) {
@@ -77,22 +77,22 @@ const Theater = () => {
 
   // 검색 상자
   const handleSearchInputChange = (event) => {
-    console.log("검색 : ", searchQuery);
+    // console.log("검색 : ", searchQuery);
     setSearchQuery(event.target.value);
   };
 
   // 검색 확인 버튼 누를 시 내용 조회
   const handleSearchButtonClick = async () => {
-    console.log("검색 키워드: ", searchQuery);
+    // console.log("검색 키워드: ", searchQuery);
     const resp = await TheaterApi.theaterAddrSearch(searchQuery);
     if (resp.data !== null && resp.data.length > 0) {
       // 검색 결과가 있을 경우
       setTheaterData(resp.data);
-      console.log("지도정보 : " + resp.data);
+      // console.log("지도정보 : " + resp.data);
       setSearchQuery(""); // 엔터 시 글 초기화
       setLocation({ lat: resp.data[0].latitude, long: resp.data[0].longitude });
     } else {
-      console.log("검색결과 없음");
+      // console.log("검색결과 없음");
       // 검색 결과가 없는 경우 모달 열기
       handleModal(
         "검색 결과 없음",

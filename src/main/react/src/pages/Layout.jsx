@@ -46,7 +46,7 @@ const Layout = () => {
     const res = await MemberApi.getMembership();
     if (res.data) {
       setIsMembership(res.data);
-      console.log("시네픽 멤버 : " + res.data);
+      // console.log("시네픽 멤버 : " + res.data);
     }
   };
 
@@ -69,7 +69,7 @@ const Layout = () => {
       setLoginStatus("");
       window.localStorage.clear();
     } else if (loginStatus === "RELOGIN") {
-      console.log("토큰만료");
+      // console.log("토큰만료");
       setLoginStatus("");
       window.localStorage.clear();
       handleModal(

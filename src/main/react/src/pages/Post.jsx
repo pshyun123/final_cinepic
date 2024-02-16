@@ -45,9 +45,9 @@ const Post = () => {
 
   // 게시글 상세 Api
   const fetchBoardData = async () => {
-    console.log("API 요청 전");
+    // console.log("API 요청 전");
     const res = await BoardApi.boardDetail(postId);
-    console.log("API 요청 후 : ", res);
+    // console.log("API 요청 후 : ", res);
     if (res.data !== null) {
       setBoardData(res.data);
       const toDate = new Date(res.data.regDate);

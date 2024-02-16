@@ -27,7 +27,7 @@ const Common = {
   // 헤더
   tokenHeader: () => {
     const accessToken = Common.getAccessToken();
-    console.log("헤더 토큰 : " + accessToken);
+    // console.log("헤더 토큰 : " + accessToken);
     return {
       headers: {
         "Content-Type": "application/json",

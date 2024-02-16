@@ -29,9 +29,9 @@ const PostRevise = () => {
   const getMemberDetail = useTokenAxios(fetchMemberDetail);
 
   const fetchBoardData = async () => {
-    console.log("API 요청 전");
+    // console.log("API 요청 전");
     const res = await BoardApi.boardDetail(postId);
-    console.log("API 요청 후 : ", res);
+    // console.log("API 요청 후 : ", res);
     if (res.data !== null) {
       setBoardData(res.data);
       setSelCategory(res.data.categoryName);
@@ -117,7 +117,7 @@ const PostRevise = () => {
     );
 
     if (res.data) {
-      console.log("저장 성공!");
+      // console.log("저장 성공!");
       handleModal("성공", "수정이 완료되었습니다.", false);
     }
   };
@@ -127,10 +127,10 @@ const PostRevise = () => {
       const storageRef = storage.ref();
       const fileRef = storageRef.child(file.name);
       fileRef.put(file).then(() => {
-        console.log("저장성공!");
+        // console.log("저장성공!");
         fileRef.getDownloadURL().then((url) => {
-          console.log("저장경로 확인 : " + url);
-          console.log("url" + url);
+          // console.log("저장경로 확인 : " + url);
+          // console.log("url" + url);
           updatePost(url);
         });
       });

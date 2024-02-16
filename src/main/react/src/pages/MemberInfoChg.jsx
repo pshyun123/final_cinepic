@@ -100,7 +100,7 @@ const MemberInfoChg = () => {
     if (checkVal !== originVal[num]) {
       try {
         const res = await MemberApi.checkUnique(num, checkVal);
-        console.log("중복여부 : " + !res.data);
+        // console.log("중복여부 : " + !res.data);
         if (!res.data) {
           msgList[num]("사용 가능합니다.");
           validList[num](true);
@@ -126,7 +126,7 @@ const MemberInfoChg = () => {
 
   const fetchIsOriginPw = async () => {
     const res = await MemberApi.isPassword(inputOriginPw);
-    console.log("비밀번호 확인 : " + res.data);
+    // console.log("비밀번호 확인 : " + res.data);
     if (res.data) {
       handleModal("확인", "비밀번호가 일치합니다. \n새 비밀번호를 입력하세요.");
       setIsOriginPw(true);
@@ -216,7 +216,7 @@ const MemberInfoChg = () => {
   const fetchMemberInfo = async () => {
     const res = await MemberApi.getMemberDetail();
     if (res.data !== null) {
-      console.log("상세회원정보 : " + res.data);
+      // console.log("상세회원정보 : " + res.data);
       setMemberInfo(res.data);
       setInputAlias(res.data.alias);
       setInputPhone(res.data.phone);
@@ -265,7 +265,7 @@ const MemberInfoChg = () => {
       memberInfo.isKakao
     );
     if (res.data) {
-      console.log("회원정보 수정 성공!");
+      // console.log("회원정보 수정 성공!");
       handleModal("성공", "정보가 수정되었습니다.", false, 2);
     }
   };

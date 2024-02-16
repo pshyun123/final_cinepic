@@ -21,7 +21,7 @@ const MemberPost = () => {
   };
 
   useEffect(() => {
-    console.log("선택값 : " + selType);
+    // console.log("선택값 : " + selType);
     setIsLoading(true);
   }, [selType]);
   return (

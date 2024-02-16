@@ -153,9 +153,9 @@ const CommentWrite = ({
   const [num, setNum] = useState("1");
   const [text, setText] = useState("");
 
-  useEffect(() => {
-    console.log("영화아이디 : " + movieId);
-  }, []);
+  // useEffect(() => {
+  //   console.log("영화아이디 : " + movieId);
+  // }, []);
 
   // 관람평 저장
   const handleSubmitComment = async () => {
@@ -165,7 +165,7 @@ const CommentWrite = ({
       num,
       text
     );
-    console.log("관람평 저장 결과 : ", res.data);
+    // console.log("관람평 저장 결과 : ", res.data);
     if (res.data) {
       setField("연출");
       setNum("1");
@@ -179,7 +179,7 @@ const CommentWrite = ({
     <>
       <CommentWriteComp
         onClick={() => {
-          console.log("click!");
+          // console.log("click!");
           !loginStatus &&
             handleModal(
               "로그인",

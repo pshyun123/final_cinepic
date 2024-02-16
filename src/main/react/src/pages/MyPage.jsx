@@ -21,7 +21,7 @@ const MyPage = () => {
 
   const memberDetail = async () => {
     const res = await MemberApi.getMemberDetail();
-    console.log("상세회원정보 : " + res.data);
+    // console.log("상세회원정보 : " + res.data);
     if (res.data !== null) {
       setMemberInfo(res.data);
     }

@@ -5,9 +5,9 @@ import MovieList from "../component/MovieSearch/MovieList";
 const MovieSearch = () => {
   const [keyword, setKeyword] = useState("");
 
-  useEffect(() => {
-    console.log("검색 키워드 : " + keyword);
-  }, [keyword]);
+  // useEffect(() => {
+  //   console.log("검색 키워드 : " + keyword);
+  // }, [keyword]);
 
   const [sortBy, setSortBy] = useState("recent");
 

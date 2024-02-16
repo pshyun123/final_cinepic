@@ -71,7 +71,7 @@ const CommentContainer = ({ movieId, userImage, userAlias }) => {
   const fetchCommentList = async (page) => {
     const res = await MovieDetailApi.getPagedMovieComments(movieId, page);
     if (res.data !== null) {
-      console.log("관람평 페이지네이션 : ", res.data);
+      // console.log("관람평 페이지네이션 : ", res.data);
       setMovieCommentData(res.data);
     }
   };
@@ -83,7 +83,7 @@ const CommentContainer = ({ movieId, userImage, userAlias }) => {
     setPage(1);
     const res = await MovieDetailApi.getTotalMovieCommentPages(movieId);
     if (res.data !== null) {
-      console.log("관람평 총 페이지 수 : ", res.data);
+      // console.log("관람평 총 페이지 수 : ", res.data);
       setTotalPage(res.data);
       getFirstList();
     }
@@ -104,7 +104,7 @@ const CommentContainer = ({ movieId, userImage, userAlias }) => {
   const deleteComment = async () => {
     const res = await MovieDetailApi.deleteMovieComment(editId);
     if (res.data) {
-      console.log("관람평 삭제 성공");
+      // console.log("관람평 삭제 성공");
       fetchPage();
     }
   };

@@ -172,8 +172,8 @@ const MovieList = ({ sortType, keyword, sortBy, setSortBy, searchCompRef }) => {
     const hiddenMovieIds = Object.keys(hideState).filter(
       (movieId) => hideState[movieId]
     );
-    console.log(`Number of hidden movies: ${hiddenMovieIds.length}`);
-    console.log("무비길이 : " + movieData.length);
+    // console.log(`Number of hidden movies: ${hiddenMovieIds.length}`);
+    // console.log("무비길이 : " + movieData.length);
     if (hiddenMovieIds.length === movieData.length) {
       setMovieData([]);
     }

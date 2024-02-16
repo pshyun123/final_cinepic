@@ -130,7 +130,7 @@ const FaqList = () => {
       const res = await FaqApi.getMainFaq();
       if (res.data !== null) {
         setFaqData(res.data);
-        console.log("Faq리스트 가져옴");
+        // console.log("Faq리스트 가져옴");
       }
     } catch (e) {
       console.log(e);

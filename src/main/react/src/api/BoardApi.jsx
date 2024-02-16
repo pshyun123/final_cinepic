@@ -118,7 +118,7 @@ const BoardApi = {
   // Admin
   // 게시글 리스트 조회(페이지네이션)
   getAdminBoardList: async (page) => {
-    console.log("관리자 게시글 불러오는 중 - 페이지 : " + page);
+    // console.log("관리자 게시글 불러오는 중 - 페이지 : " + page);
     return await axios.get(
       Common.CP_DOMAIN + `/board/admin/boardlist?page=${page - 1}&size=10`,
       Common.tokenHeader()
@@ -127,7 +127,7 @@ const BoardApi = {
 
   // 총 페이지 조회
   getAdminPages: async () => {
-    console.log("총 페이지 가져오는 중");
+    // console.log("총 페이지 가져오는 중");
     const page = 0;
     const size = 10;
     return await axios.get(
@@ -138,7 +138,7 @@ const BoardApi = {
 
   // 모든 카테고리 조회
   getAllCategories: async () => {
-    console.log("모든 카테고리 가져오는 중");
+    // console.log("모든 카테고리 가져오는 중");
     return await axios.get(
       Common.CP_DOMAIN + `/board/admin/boardtype`,
       Common.tokenHeader()

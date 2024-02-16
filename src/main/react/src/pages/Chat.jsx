@@ -12,7 +12,7 @@ const Chat = () => {
     const accessToken = Common.getAccessToken();
     try {
       const res = await MemberApi.getMemberDetail();
-      console.log("상세회원정보 : " + res.data);
+      // console.log("상세회원정보 : " + res.data);
       if (res.data !== null) {
         setMemberInfo(res.data);
       }
@@ -23,7 +23,7 @@ const Chat = () => {
         if (newToken !== accessToken) {
           try {
             const res = await MemberApi.getMemberDetail();
-            console.log("토큰 재발행 회원정보 : " + res.data);
+            // console.log("토큰 재발행 회원정보 : " + res.data);
             if (res.data !== null) {
               setMemberInfo(res.data);
             }

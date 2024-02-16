@@ -4,12 +4,12 @@ import Common from "../util/Common";
 const MemberApi = {
   // 이메일 인증
   sendEmailCode: async (email) => {
-    console.log("이메일 인증 : " + email);
+    // console.log("이메일 인증 : " + email);
     return await axios.get(Common.CP_DOMAIN + `/email/mail?id=${email}`);
   },
   // 중복 체크
   checkUnique: async (type, data) => {
-    console.log("중복체크 진입 : " + data);
+    // console.log("중복체크 진입 : " + data);
     const dataMap = {
       type: type,
       data: data,
@@ -42,7 +42,7 @@ const MemberApi = {
   },
   //로그인
   login: async (email, password) => {
-    console.log("로그인 진입 : " + email);
+    // console.log("로그인 진입 : " + email);
     const data = {
       email: email,
       password: password,
@@ -55,7 +55,7 @@ const MemberApi = {
     const data = {
       isMembership: isMembership,
     };
-    console.log("saveMembership start");
+    // console.log("saveMembership start");
     return await axios.post(
       Common.CP_DOMAIN + "/member/membership",
       data,
@@ -89,7 +89,7 @@ const MemberApi = {
     image,
     isKakao
   ) => {
-    console.log("회원정보 수정 : " + email);
+    // console.log("회원정보 수정 : " + email);
     const data = {
       email: email,
       password: password,
@@ -120,7 +120,7 @@ const MemberApi = {
 
   // 회원 탈퇴
   withdrawMember: async () => {
-    console.log("회원 탈퇴 진입");
+    // console.log("회원 탈퇴 진입");
     return await axios.get(
       Common.CP_DOMAIN + "/member/withdraw",
       Common.tokenHeader()
@@ -129,7 +129,7 @@ const MemberApi = {
 
   // 회원 맞춤 영화 추천
   getPreferMovies: async (prefer) => {
-    console.log(prefer);
+    // console.log(prefer);
     return await axios.get(
       Common.CP_DOMAIN + `/member/recs`,
       Common.tokenHeader()

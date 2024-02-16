@@ -40,9 +40,9 @@ const Header = () => {
   const onLogOutClick = () => {
     setLoginStatus("");
     setIsMembership("");
-    console.log(
-      "유저로그아웃 확인 상태" + window.localStorage.getItem("loginStatus")
-    );
+    // console.log(
+    //   "유저로그아웃 확인 상태" + window.localStorage.getItem("loginStatus")
+    // );
     window.localStorage.clear();
     navigate("/");
   };
