@@ -45,6 +45,7 @@ export const InputButton = (props) => {
     msg,
     msgType,
     disabled,
+    height,
   } = props;
 
   return (
@@ -62,7 +63,7 @@ export const InputButton = (props) => {
           active={active}
           clickEvt={clickEvt}
           width="30%"
-          height="48px"
+          height={height ? height : "48px"}
           fontSize="14px"
         />
       </div>

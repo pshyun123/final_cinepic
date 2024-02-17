@@ -6,6 +6,7 @@ import Button from "../util/Button";
 import Modal from "../util/Modal";
 import MemberApi from "../api/MemberApi";
 import Common from "../util/Common";
+import FindPwModal from "../component/Login/FindPwModal";
 
 const LoginComp = styled.section`
   width: 100%;
@@ -30,7 +31,7 @@ const LoginComp = styled.section`
         border-radius: 5px;
         border: 1px solid var(--GREY);
         overflow: hidden;
-        margin-bottom: 40px;
+        margin-bottom: 10px;
         input {
           width: 100%;
           font-size: 1em;
@@ -45,15 +46,28 @@ const LoginComp = styled.section`
           }
         }
       }
-      button {
+      .findPw {
+        display: flex;
+        justify-content: end;
         margin-bottom: 30px;
-        &.kakaoBtn {
-          background-color: #fee500;
-          font-size: 1em;
-          font-weight: 600;
-          color: #333;
+        span {
           cursor: pointer;
-          border: none;
+          &:hover {
+            color: var(--RED);
+          }
+        }
+      }
+      .btnBox {
+        button {
+          margin-bottom: 30px;
+          &.kakaoBtn {
+            background-color: #fee500;
+            font-size: 1em;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            border: none;
+          }
         }
       }
     }
@@ -100,6 +114,13 @@ const Login = () => {
     setModalOpen(false);
   };
   const [modalMsg, setModalMsg] = useState("");
+  const [modalHeader, setModalHeader] = useState("");
+
+  const handleModal = (header, msg) => {
+    setModalOpen(true);
+    setModalHeader(header);
+    setModalMsg(msg);
+  };
 
   useEffect(() => {
     // console.log("id:" + inputEmail);
@@ -111,7 +132,7 @@ const Login = () => {
   }, [inputEmail, inputPw, modalMsg]);
 
   const loginClick = async () => {
-    console.log("로그인!");
+    // console.log("로그인!");
     try {
       const res = await MemberApi.login(inputEmail, inputPw);
       // console.log(res.data);
@@ -123,19 +144,16 @@ const Login = () => {
         setLoginStatus(true);
         navigate("/");
       } else {
-        setModalOpen(true);
-        setModalMsg("잘못된 아이디 또는 비밀번호 입니다.");
+        handleModal("로그인 실패", "잘못된 아이디 또는 비밀번호 입니다.");
       }
     } catch (err) {
       console.log("로그인 에러 : " + err);
       if (err.response && err.response.status === 401) {
         console.log("로그인 실패: 405 Unauthorized");
-        setModalOpen(true);
-        setModalMsg("잘못된 아이디 또는 비밀번호 입니다.");
+        handleModal("로그인 실패", "잘못된 아이디 또는 비밀번호 입니다.");
       } else {
         console.log("로그인 에러 : " + err);
-        setModalOpen(true);
-        setModalMsg("서버와의 연결이 끊어졌습니다!");
+        handleModal("로그인 실패", "서버와의 연결이 끊어졌습니다!");
       }
     }
   };
@@ -154,6 +172,12 @@ const Login = () => {
       navigate("/");
     }
   }, []);
+
+  // 비밀 번호 팝업 처리
+  const [openPwModal, setPwModalOpen] = useState(false);
+  const closePwModal = () => {
+    setPwModalOpen(false);
+  };
 
   return (
     <>
@@ -183,39 +207,56 @@ const Login = () => {
                 }}
               />
             </div>
-            <Button
-              children="로그인"
-              active={isActive}
-              width="100%"
-              height="50px"
-              clickEvt={loginClick}
-            />
-            <Button
-              children="회원가입"
-              front="var(--DARKRED)"
-              active={true}
-              width="100%"
-              height="50px"
-              clickEvt={toJoin}
-            />
-            <Button
-              className="kakaoBtn"
-              children="카카오 간편 로그인"
-              active={true}
-              width="100%"
-              height="50px"
-              front="#fee500"
-              color="#333"
-              clickEvt={kakaoLogin}
-            />
+            <div className="findPw">
+              <span
+                onClick={() => {
+                  setPwModalOpen(true);
+                }}
+              >
+                비밀번호 찾기
+              </span>
+            </div>
+            <div className="btnBox">
+              <Button
+                children="로그인"
+                active={isActive}
+                width="100%"
+                height="50px"
+                clickEvt={loginClick}
+              />
+              <Button
+                children="회원가입"
+                front="var(--DARKRED)"
+                active={true}
+                width="100%"
+                height="50px"
+                clickEvt={toJoin}
+              />
+              <Button
+                className="kakaoBtn"
+                children="카카오 간편 로그인"
+                active={true}
+                width="100%"
+                height="50px"
+                front="#fee500"
+                color="#333"
+                clickEvt={kakaoLogin}
+              />
+            </div>
           </div>
         </div>
       </LoginComp>
       <Modal
         open={openModal}
         close={closeModal}
-        header="로그인 실패"
+        header={modalHeader}
         children={modalMsg}
+      />
+      <FindPwModal
+        header={"비밀번호 찾기"}
+        open={openPwModal}
+        close={closePwModal}
+        handleModal={handleModal}
       />
     </>
   );

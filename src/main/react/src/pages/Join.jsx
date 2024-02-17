@@ -99,7 +99,7 @@ const Join = ({ email, profile, kakaoId }) => {
     const validList = [setIsEmail, setIsAlias, setIsPhone];
     try {
       const res = await MemberApi.checkUnique(num, checkVal);
-      console.log("중복여부 : " + !res.data);
+      // console.log("중복여부 : " + !res.data);
       if (!res.data) {
         if (num === 0) {
           msgList[num]("사용 가능합니다. 인증을 해주세요.");
@@ -287,9 +287,9 @@ const Join = ({ email, profile, kakaoId }) => {
       const storageRef = storage.ref();
       const fileRef = storageRef.child(file.name);
       fileRef.put(file).then(() => {
-        console.log("저장성공!");
+        // console.log("저장성공!");
         fileRef.getDownloadURL().then((url) => {
-          console.log("저장경로 확인 : " + url);
+          // console.log("저장경로 확인 : " + url);
           setUrl(url);
           addNewMember(url);
         });

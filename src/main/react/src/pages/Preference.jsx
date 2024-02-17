@@ -296,7 +296,7 @@ const Preference = () => {
                   value={inputDirector}
                   onChange={(e) => setInputDirector(e.target.value)}
                   onKeyPress={(e) => {
-                    console.log("onKeyDown 발생");
+                    // console.log("onKeyDown 발생");
                     if (e.key === "Enter") {
                       e.preventDefault(); // 기본 Enter 행동 방지
                       addDirector();

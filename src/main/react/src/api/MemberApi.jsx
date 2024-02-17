@@ -27,7 +27,7 @@ const MemberApi = {
     image,
     isKakao
   ) => {
-    console.log("회원가입 진입 : " + email);
+    // console.log("회원가입 진입 : " + email);
     const data = {
       email: email,
       password: password,
@@ -49,7 +49,15 @@ const MemberApi = {
     };
     return await axios.post(Common.CP_DOMAIN + "/auth/login", data);
   },
-
+  //비밀번호 변경
+  changePw: async (email, password) => {
+    // console.log("비밀번호 변경 진입 :" + email);
+    const data = {
+      email: email,
+      password: password,
+    };
+    return await axios.post(Common.CP_DOMAIN + "/auth/chgPw", data);
+  },
   // 멤버십 여부 업데이트
   saveMembership: async (isMembership) => {
     const data = {
