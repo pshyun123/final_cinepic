@@ -95,7 +95,10 @@ const ChatBox = ({ memberInfo, roomId }) => {
     setInputMsg(e.target.value);
   };
   const onEnterKey = (e) => {
-    if (e.key === "Enter") sendMsg(e);
+    if (e.key === "Enter") {
+        e.preventDefault();
+        sendMsg(e);
+    }
   };
 
   // 채팅 전송

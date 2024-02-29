@@ -107,7 +107,7 @@ const ChatRoomList = () => {
       setErrMsg("5자 이상 15자 이하로 입력하세요.");
       setIsActive(false);
     } else {
-      setErrMsg("키키를 만들 수 있어요!");
+      setErrMsg("씨네톡을 만들 수 있어요!");
       setIsActive(true);
     }
   };
@@ -124,7 +124,7 @@ const ChatRoomList = () => {
 
   // 채팅 리스트 호출
   const fetchChatList = async () => {
-    // console.log("kikilist 부르는중");
+    // console.log("chatlist 부르는중");
     const res = await ChatApi.getChatList();
     if (res.data !== null) {
       // console.log("채팅방 목록 : " + res.data);
@@ -134,7 +134,7 @@ const ChatRoomList = () => {
   const getChatList = useTokenAxios(fetchChatList);
 
   // 채팅방 진입
-  const enterKiki = (roomId) => {
+  const enterTok = (roomId) => {
     navigate(`/chatlist/${roomId}`);
   };
 
@@ -171,7 +171,7 @@ const ChatRoomList = () => {
                 <ChatRoom
                   key={room.roomId}
                   data={room}
-                  onClick={() => enterKiki(room.roomId)}
+                  onClick={() => enterTok(room.roomId)}
                 />
               ))}
             {chatList.length === 0 && (

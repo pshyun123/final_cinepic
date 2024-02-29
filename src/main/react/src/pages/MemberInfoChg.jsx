@@ -16,7 +16,7 @@ import ProfileImg from "../util/ProfileImg";
 const MemberInfoChg = () => {
   const navigate = useNavigate();
   const context = useContext(UserContext);
-  const { setLoginStatus, setIsKikiMember } = context;
+  const { setLoginStatus, setIsMembership, setIsPrefer } = context;
 
   // 회원정보
   const [memberInfo, setMemberInfo] = useState(null);
@@ -281,7 +281,8 @@ const MemberInfoChg = () => {
     const res = await MemberApi.withdrawMember();
     if (res.data) {
       setLoginStatus("");
-      setIsKikiMember("");
+      setIsMembership("");
+      setIsPrefer("");
       window.localStorage.clear();
       navigate("/");
     }
