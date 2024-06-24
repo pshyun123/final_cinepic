@@ -82,6 +82,7 @@ const MemTr = ({ data, index, setId, deleteModal }) => {
             deleteModal();
           }}
         />
+        <button></button>
       </td>
     </MemTrComp>
   );
