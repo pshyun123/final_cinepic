@@ -79,11 +79,12 @@
 ### 4. 단위 테스트 결과 
 <img width="1440" alt="#9 단위테스트-프론트" src="https://github.com/user-attachments/assets/e645f908-29d7-41d0-8e62-1d145fba2468">
 <img width="1199" alt="#10 단위-백" src="https://github.com/user-attachments/assets/4613efe2-2246-4f5a-982f-dfe795154728">
- 
-### 5. 애자일 - 스프린트 기록 
+
+### 5. 애자일 - 스플린트 회의
+약 일주일의 스플린트 단위를 투고 매일 짧은 회의를 통해 각자의 진행속도 및 문제 사항 점검
 <img width="589" alt="#11  스플린트 2024-11-29 오후 9 13 22" src="https://github.com/user-attachments/assets/c35cc60e-efd5-49b7-9ec7-9a8ad0f0ed11">
  
-## ⚙️ **사용기술 및 환경**
+#### ⚙️ **사용기술 및 환경**
 | 분류 | 기술 | 
 | --- | :--- | 
 | 사용 언어 | HTML, CSS(SCSS), JavaScript(JSX) / Java / Python |
