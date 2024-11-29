@@ -1,5 +1,4 @@
 # **CinePic** 
-**✅ [사이트로 이동](https://cinepic2024.site)** 
 🔗 **CinePic 사이트**
 
 https://cinepic2024.site </br>
