@@ -11,6 +11,7 @@ https://cinepic2024.site </br>
 🔗 **CinePic 페이지**
 
 [씨네픽 전체 이미지.pdf](https://github.com/user-attachments/files/15971146/default.pdf)
+
 ---
 
 ## 🔍 **프로젝트 소개** 
