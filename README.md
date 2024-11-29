@@ -18,7 +18,7 @@
 ---
  
 ## **✅ 프로젝트 맛보기** 
-![#맛보기]https://github.com/user-attachments/assets/c5455bec-a8b0-4558-bf5e-655a363e6bb0
+![미리보기](https://github.com/user-attachments/assets/b2ba19bc-e738-488e-9502-1c7d54b602a8)
  
 ### ⏰ 개발기간
 2024.01.15 ~ 2024.02.16
