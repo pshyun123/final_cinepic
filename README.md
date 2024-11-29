@@ -27,7 +27,7 @@ https://cinepic2024.site </br>
 7. **관리자 페이지**: 회원, 게시판, FAQ 관리를 위한 데이터 시각화 
 ---
 
-###📌 프로젝트에 포함 될 주요 기능
+### 📌 프로젝트에 포함 될 주요 기능
 - 주제 선정, 화면 구성(Figma)부터 프론트엔드, 백엔드, DataBase 설계, AWS 배포까지 전반적인 구현 경험
 - CRUD 구현 및 다양한 API 활용
 - React, Java, SpringBoot, MySQL, jwt, 웹소켓, Python, ElasticSearch, 머신러닝을 이용한 여러 기술 익히기
