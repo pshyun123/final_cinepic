@@ -21,16 +21,15 @@
 ![#맛보기]https://github.com/user-attachments/assets/c5455bec-a8b0-4558-bf5e-655a363e6bb0
  
 ### ⏰ **개발기간** 
-2024.01.15 ~ 2024.02.16 
- 
-| 분류              | 기간              | 
-| ----------------- | ---------------- | 
-| 1. 주제, 요구사항 정의  | 1/15 ~ 1/17      | 
-| 2. 스토리보드 작성     | 1/15 ~ 1/17      | 
-| 3. 데이터베이스 설계     | 1/17            | 
-| 4. 프론트엔드 개발      | 1/18 ~ 2/4       | 
-| 5. 백엔드 개발         | 1/18 ~ 2/4       | 
-| 6. AWS 배포           | 2/14 ~ 2/16      | 
+2024.01.15 ~ 2024.02.16
+| 분류 | 날짜 | 
+| --- | --- | --- |
+| 1. 주제, 요구사항 | 1/15 ~ 1/17 |
+| 2. 스토리보드 | 1/15 ~ 1/17 |
+| 3. DATABASE | 1/17 ~ 17|
+| 4. FRONTEND | 1/18 ~ 2/4 |
+| 5. BACKEND | 1/18 ~ 2/4 |
+| 6. AWS | 1/14 ~ 1/16 |
  
 ---
  
@@ -81,19 +80,23 @@
 <img width="1199" alt="#10 단위-백" src="https://github.com/user-attachments/assets/4613efe2-2246-4f5a-982f-dfe795154728">
  
 ### 5. 애자일 - 스프린트 기록 
+<img width="589" alt="#11  스플린트 2024-11-29 오후 9 13 22" src="https://github.com/user-attachments/assets/c35cc60e-efd5-49b7-9ec7-9a8ad0f0ed11">
  
-### ⚙️ **사용 기술 및 환경** 
- 
-| 분류               | 기술                          | 
-| ------------------ | ---------------------------- | 
-| **사용 언어**        | HTML, CSS(SCSS), JavaScript(JSX), Java, Python | 
-| **프론트엔드**       | React                        | 
-| **백엔드**          | Spring Boot (JPA), Flask     | 
-| **검색 엔진**        | Elasticsearch                | 
-| **데이터베이스**      | MySQL                        | 
-| **클라우드 스토리지** | Firebase Storage             | 
-| **IDE**            | IntelliJ, VScode, Pycharm    | 
-| **협업 도구**        | GitHub, Notion, Figma        | 
+## ⚙️ **사용기술 및 환경**
+ | 분류 | 기술 | 
+| --- | --- | --- |
+| 사용 언어 | HTML, CSS(SCSS), JavaScript(JSX) / Java / Python |
+| 프론트엔드 라이브러리 | React |
+| 백엔드 프레임워크 | Spring Boot - JPA / Flask | 
+| 검색 엔진 | ElasticSearch | 
+| RDBMS | MySQL | 
+| 클라우드 스토리지 | Firebase Storage | 
+| IDE | IntelliJ, VScode, MySQL WorkBench, DBeaver, Pycharm | 
+| 협업 도구 | GitHub, Notion, Figma, Google Spreadsheet | 
+| MockUp Tool | Figma | 
+| 형상 관리 | Git, GitHub | 
+
+
  
 ---
  
