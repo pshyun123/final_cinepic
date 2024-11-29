@@ -11,7 +11,8 @@ https://cinepic2024.site </br>
 🔗 **CinePic 페이지**
 
 [씨네픽 전체 이미지.pdf](https://github.com/user-attachments/files/15971146/default.pdf)
- --
+---
+
 ## 🔍 **프로젝트 소개** 
 **Cinepic**은 회원가입 시 입력한 취향 정보 및 영화 북마크 데이터를 기반으로 **사용자 맞춤 영화 추천**을 제공하는 사이트입니다. 
  
